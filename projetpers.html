@@ -45,10 +45,10 @@
                         <a class="nav-link" href="index.html">Page D'accueil </a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="PPR2.html">Projet professionnel</a>
+                        <a class="nav-link" href="PPR2.html">Projet professionnels</a>
                      </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="projetpers.html">Projet Personnel  </a>
+                        <a class="nav-link" href="projetpers.html">Projet Personnels  </a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="cv2.pdf">Mon cv</a>
@@ -56,9 +56,7 @@
                      <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Veille Technologique</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="service.html">A propos de moi </a>
-                     </li>
+
  
                      </li>
                   </ul>
@@ -70,13 +68,21 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="portfolio_taital"><u> </u><span class="portfolio_taital_1">Mon Projet Personnel</span></h1>
+                  <h1 class="portfolio_taital"><u> </u><span class="portfolio_taital_1">Mes Projets Personnels</span></h1>
                </div>
             </div>
 
                        <div class="row">
                <div class="col-sm-12">
-                 <br> <h1 class="services_taital"><span class="portfolio_taital_1">Les Sites Web  </span></h1>
+                 <br> <h1 class="services_taital"><span class="portfolio_taital_1"> Les Sites Web :   </span></h1>
+               </div>
+                                      <div class="row">
+               <div class="col-sm-12">
+                 <br> <h1 class="services_taital"><span class="portfolio_taital_1"> Un Serveur Proxmox :  </span></h1>
+               </div>
+            </div>
+               <div class="col-sm-12">
+                 <br> <h1 class="services_taital"><span class="portfolio_taital_1"> VM Active Directory :  </span></h1>
                </div>
             </div>
             <div class="portfolio_section">
@@ -290,11 +296,273 @@
 <br>Ce projet m’a permis de développer mes compétences en création de sites web, d’améliorer mon sens de l’organisation et de renforcer ma capacité à travailler de manière autonome. Il m’a également appris l’importance de la préparation et de la présentation professionnelle d’un projet numérique.</p>
 </div>
 <br>
+
               </div>
             </div>
-            
+            <div>
+                              <div class="col-sm-12">
+                 <br> <h1 class="services_taital"><span class="portfolio_taital_1"> Un Serveur Proxmox :   </span></h1>
+                
+   <br>
+      <br>
+         <br>
+<p><br> Présentation
+<br>Vous souhaitez effectuer vos premiers pas avec l'hyperviseur Proxmox VE ? Vous êtes au bon endroit. Dans ce tutoriel, nous allons voir comment installer Proxmox VE et comment créer une première machine virtuelle.
+<br>
+<br>Bien débuter avec Proxmox VE : la virtualisation open source
+<br>Cliquez ici pour regarder la vidéo sur YouTube
+<br>Propulsé sur le devant de la scène suite aux changements de stratégies chez VMware, Proxmox VE (Virtual Environment) est un hyperviseur open-source conçu pour l'exécution de machines virtuelles (VM) et de conteneurs. Basé sur Linux, et plus particulièrement la distribution Debian, Proxmox VE s'appuie sur deux technologies : Kernel-based Virtual Machine (KVM) pour la virtualisation complète et LXC (Linux Containers) pour les conteneurs.
+<br>
+<br>Le projet Proxmox VE a débuté en 2007, en Autriche, et sa première version stable a été lancée en 2008. Depuis, il est régulièrement mis à jour et les nouvelles versions apportent des fonctionnalités. À l'heure où cet article est écrit, la version la plus récente est la suivante : Proxmox VE 8.4.1, basée sur Debian 12 et disponible depuis le 9 avril 2025.
+<br>
+<br>
+<br>Proxmox VE met à disposition des administrateurs une interface de gestion web qui permet de gérer l'ensemble de votre infrastructure de virtualisation. Une interface en ligne de commande est également accessible, ainsi qu'une API REST. Il peut fonctionner seul, c'est-à-dire dans une architecture avec un seul nœud, ou au sein d'un cluster avec plusieurs nœuds pour assurer la haute disponibilité des ressources. À ce sujet, il est important de savoir qu'il adopte une approche multi-maître, donc n'importe quel nœud du cluster peut effectuer toutes les tâches de gestion.
+<br>
+<br>Bien qu'il nécessite un temps de prise en main pour en comprendre tous les rouages, Proxmox VE est extrêmement flexible. Si nous prenons l'exemple du stockage, il prend en charge les espaces de stockage locaux, le stockage en réseau (SAN/NAS), et les solutions de stockage distribué comme Ceph.
+<br>
+<br>Preuve que le projet Proxmox au sens large continue de s'étoffer, une solution de sauvegarde et restauration nommée Proxmox Backup Server a été lancée le 11 novembre 2020. Aujourd'hui, celle que l'on surnomme PBS et qui est codée en Rust représente une solution fiable et pérenne pour sauvegarder les environnements Proxmox VE.
+<br>
+<br>Dans cet article d'introduction, nous commencerons par la base avec la réalisation des actions suivantes :
+<br>
+<br>Création de la clé USB bootable
+<br>Installation de base de Proxmox VE 8.4
+<br>Mise à jour des paquets
+<br>Importation d'une image ISO
+<br>Création d'une première machine virtuelle
+<br>Créer un utilisateur dédié pour un premier aperçu dans la gestion des permissions
+<br>Ici, nous allons installer Proxmox VE à partir de l'image ISO officielle de Proxmox VE. Une alternative consiste à installer une machine Debian et à installer les paquets nécessaires pour en faire un hôte Proxmox VE (paquets : proxmox-default-kernel, proxmox-ve, etc.).
+<br>
+<br>D'autres articles seront publiés pour vous permettre d'exploiter pleinement Proxmox VE et de vous former sur cette solution.
+<br>
+<br>Note : Proxmox VE 9.0 est disponible en version bêta depuis le 18 juillet 2025. Cette nouvelle version est basée sur Debian 13 Trixie, la prochaine version majeure de Debian qui sera disponible le 9 août prochain.
+<br>
+<br>II. Prérequis pour l'installation de Proxmox
+<br>A. Les prérequis matériel
+<br>Avant d'envisager l'installation de Proxmox VE 8.4, il est important de s'assurer que votre système respecte les prérequis matériels. Voici les points clés à considérer pour les prérequis :
+<br>
+<br>Processeur (CPU)
+<br>
+<br>Un CPU 64 bits (Intel 64 ou AMD64) est nécessaire, avec au moins 2 coeurs.
+<br>Pour bénéficier de la virtualisation complète KVM, le CPU et la carte mère doivent prendre en charge la virtualisation (Intel VT ou AMD-V).
+<br>Si vous prévoyez d'utiliser la fonctionnalité de PCI(e) passthrough (permettant aux machines virtuelles d'accéder directement à des périphériques physiques comme des cartes graphiques ou réseau), le CPU doit supporter impérativement les technologies VT-d ou AMD-d.
+<br>Mémoire vive (RAM)
+<br>
+<br>Un minimum de 1 Go de RAM, mais 2 Go de RAM sont recommandés. Ceci uniquement pour le système d'exploitation et les services Proxmox VE eux-mêmes.
+<br>Il faut prévoir de la mémoire supplémentaire dédiée aux machines virtuelles.
+<br>Cartes réseau
+<br>
+<br>Une interface réseau au minimum pour assurer la connectivité de l'hôte Proxmox
+<br>Des cartes réseau Gigabit redondantes sont recommandées pour la production.
+<br>Pour les déploiements Ceph, une bande passante réseau d'au moins 10 Gbit/s, ou plus, est recommandée pour la production et elle devrait être utilisée exclusivement pour le trafic Ceph.
+<br>Stockage
+<br>
+<br>Le choix de l'emplacement du stockage et la volumétrie dépendent avant tout de vos besoins.
+<br>Proxmox VE prend en charge divers types de stockage : stockage local, SAN, NAS, et des solutions de stockage distribué comme Ceph RBD.
+<br>Lors de l'installation, vous pourrez choisir le système de fichiers parmi ext4, XFS, BTRFS ou ZFS.
+<br>Secure Boot
+<br>
+<br>Depuis Proxmox VE 8.1, Secure Boot est pris en charge nativement et fonctionne "out of the box". Sinon, vous devez le désactiver dans les paramètres du BIOS de votre machine.
+<br>Il s'agit d'indications à prendre en considération, mais en aucun cas d'une configuration type. Chaque projet est différent.
+<br>
+<br>B. Création de la clé USB bootable
+<br>
+<br>
+<br>Dans un premier temps, il sera nécessaire de récupérer le média d'installation (ISO) pour créer une clé USB bootable afin d'installer Proxmox sur notre serveur. La clé doit avoir au moins 1 Go de stockage disponible. Pour Windows, des outils comme balenaEtcher ou Rufus (en mode DD) sont recommandés. Ici, nous utiliserons Rufus, simplement par habitude. Si vous utilisez une machine Linux pour créer la clé USB bootable, vous pouvez utiliser la commande dd (voir ci-dessous).
+<br>
+<br>La méthode la plus sécurisée pour se procurer les sources d'installation, c'est de se rendre directement sur le site de l’éditeur.
+<br>
+<br>Télécharger Proxmox VE
+<br>Cliquez sur le bouton "Download" au niveau de la section "Proxmox VE 8.4 ISO Installer" pour télécharger l'ISO.
+<br>
+<br>
+<br>Attention : la clé USB sera formatée alors, pensez à sauvegarder vos données.
+<br>
+<br>Ensuite, créez la clé USB bootable avec un utilitaire. Je vous recommande d'utiliser Rufus : il suffira de sélectionner votre clé USB et le fichier ISO. Vous pouvez le télécharger via ce lien :
+<br>
+<br>Télécharger Rufus
+<br>Sélectionnez l'image ISO et votre clé USB. Un message d'avertissement "Image ISOHybrid détectée" va s'afficher, vous pouvez cliquer sur "OK". La clé USB bootable sera créée sans problème. Cliquez sur "Démarrer" pour lancer la création de la clé.
+<br>
+<br>
+<br>
+<br>Quand Rufus affiche le statut "Prêt", considérez la clé comme prête à l'emploi.
+<br>
+<br>
+<br>Si vous souhaitez créer une clé USB bootable sous Linux, sans utiliser un outil comme Rufus, vous pouvez exécuter la commande dd :
+<br>
+<br>sudo dd bs=1M conv=fdatasync status=progress if=./proxmox-ve_*.iso of=/dev/sdc
+<br>La commande ci-dessus suppose que l'image ISO se nomme proxmox-ve_<version>.iso et que la clé USB correspond au périphérique /dev/sdc. En cas de doute, commencez par lancer la commande lsblk pour repérer le disque correspondant à votre clé USB.
+<br>
+<br>Vous n'avez plus qu'à connecter la clé USB bootable à votre serveur.
+<br>
+<br>C. Configuration du BIOS/UEFI
+<br>
+<br>
+<br>Sur votre serveur, certaines modifications vont devoir être apportées à la configuration de votre BIOS ou UEFI (pour les configurations ayant des versions de firmware plus récent).
+<br>
+<br>Recherchez sur le site constructeur ou fabricant de la carte mère, la touche permettant d’accéder à votre BIOS/UEFI. Les touches les plus courantes pour accéder au BIOS/UEFI sont : F2, F8, F10, Delete, Esc.
+<br>
+<br>Mais aussi, dans certains cas, la combinaison de touches peut être : Ctrl + Alt + Esc ou Ctrl + Alt + Delete, bien que celles-ci soient plus courantes sur les anciennes machines. Notez également qu'une touche comme F10 peut lancer autre chose : le menu de démarrage (Boot menu).
+<br>
+<br>Comme je le disais, afin de permettre la virtualisation, il est nécessaire d’activer des fonctionnalités telles que la technologie de virtualisation, appelée :
+<br>
+<br>VT-x ou Virtualization Technology chez Intel
+<br>AMD-V ou SVM ou Secure Virtual Machine Mode chez AMD
+<br>Ensuite, il sera nécessaire de modifier les options du sélecteur d’amorçage (Boot), en indiquant l’ordre d’amorçage et en mettant la clé USB en 1ère position. Ce périphérique d'amorce doit être positionné avant le disque de la machine. L'alternative consiste à passer par le Boot Menu pour démarrer sur la clé USB une seule fois (ceci évite d'altérer la configuration du BIOS).
+<br>
+<br>
+<br>
+<br>Si vous désirez modifier l'ordre de démarrage, suivez ce qui suit. L'objectif est de venir positionner notre clé USB sur la ligne "1st Boot Device". Elle correspond à l'entrée "Removable Device", mais dans certains cas, vous pouvez avoir le nom de la clé USB qui s'affiche.
+<br>
+<br>
+<br>Quand c'est fait, sauvegardez et quittez.
+<br>
+<br>
+<br>La machine va redémarrer et elle devrait lancer la clé USB : le processus d'installation de Proxmox va pouvoir commencer.
+<br>
+<br>III. Installation de Proxmox VE 8.4
+<br>Voilà, l'interface de Proxmox s'affiche ! Nous allons procéder à l'installation. Sélectionnez l'option nommée "Install Proxmox VE (Graphical)" dans la liste. L'option "Install Proxmox VE (Terminal UI)" permet aussi de faire l'installation, à partir d'une interface plus austère, en mode console.
+<br>
+<br>
+<br>Vous verrez aussi l'apparition de la console. L'occasion de voir que le serveur Proxmox cherchera à récupérer une adresse IP automatiquement s'il est connecté au réseau.
+<br>
+<br>
+<br>Acceptez le contrat de licence utilisateur et poursuivez.
+<br>
+<br>Sélectionnez le disque qui accueillera le système. Dans cet exemple et pour la mise en route, nous partons du principe que la machine dispose d'un seul disque. Vous pouvez personnaliser le stockage, notamment choisir le système de fichiers, en cliquant sur le bouton "Options". Par défaut, Proxmox VE s'appuiera sur LVM avec le système de fichiers EXT4. Ici, vous pourriez opter plutôt sur ZFS ou Btrfs pour bénéficier de fonctionnalités avancées, mais c'est aussi plus gourmand en RAM.
+<br>
+<br>
+<br>À l'étape suivante, vous devez sélectionner votre pays, le fuseau horaire et la disposition du clavier.
+<br>
+<br>
+<br>La prochaine étape consiste à définir un mot de passe pour l'administrateur de la plateforme, associé au super-utilisateur root. Il est également nécessaire et obligatoire de spécifier une adresse e-mail valide. Ce mot de passe doit être robuste, car il donne un accès complet à votre Proxmox.
+<br>
+<br>
+<br>La suite de la configuration concerne le réseau et plus particulièrement l'interface d'administration de Proxmox.
+<br>
+<br>
+<br>
+<br>1 - Les interfaces réseau "actives" sur votre machine sont affichées, vous permettant de sélectionner celle à configurer et à affecter en tant qu'interface de management.
+<br>
+<br>2 - Spécifiez le nom FQDN de votre serveur, c'est-à-dire son nom complet : nom d'hôte + nom de domaine.
+<br>
+<br>3 - Désormais, vous devez configurer l'adresse IP de votre interface d'administration. Si le serveur a récupéré une adresse IP via DHCP, celle-ci est automatiquement inscrite.
+<br>
+<br>Voici ce que j'obtiens de mon côté :
+
+</p>
+            </div>
+                                          <div class="col-sm-12">
+                 <br> <h1 class="services_taital"><span class="portfolio_taital_1"> VM Active Directory : </span></h1>
+                 <p>
+                <br>I. Présentation
+                <br>
+                <br>
+<br>Dans ce tutoriel, nous allons apprendre à créer un domaine Active Directory sous Windows Server, en partant de zéro.
+<br>Cette procédure est réalisée sous Windows Server 2016, mais vous pouvez l'appliquer sur les versions plus récentes : Windows Server 2019 et Windows Server 2022.
+<br>Nous pourrions même dire qu'elle s'applique à des versions plus anciennes telles que Windows Server 2012 R2.
+
+<br>Pour bien appréhender le principe de l'Active Directory, vous pouvez consulter ce cours :
+
+<br>Cours - Les notions de base de l'Active Directory
+<br>En complément, voici ce tutoriel au format vidéo, en français, avec Windows Server 2019 :
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>Windows Server 2025 - ADCS - Configurer le LDAPS pour Active Directory
+<br>
+<br>Watch on
+<br>Video channel logo
+<br>Avant de commencer, veillez à effectuer ces différentes actions sur votre serveur :
+<br>
+<br>Définir un nom d'hôte sur le serveur
+<br>Définir une adresse IP statique (configuration réseau manuelle)
+<br>Effectuer les dernières mises à jour Windows
+<br>Définissez un mot de passe complexe pour le compte Administrateur de votre serveur (ce sera votre futur compte Administrateur du domaine)
+<br>Si besoin, vous pouvez télécharger une image ISO de Windows Server via cette page :
+<br>
+<br>Télécharger Windows Server 2022
+<br>
+<br>II. Créer un domaine Active Directory
+<br>A. Installer le rôle ADDS
+<br>La première étape étape, avant de créer le domaine Active Directory, consiste à installer le rôle "ADDS" : Active Directory Domain Services.
+<br>Il s'agit du rôle permettant de créer un domaine Active Directory.
+<br>
+<br>Ouvrez le Gestionnaire de serveur, puis cliquez sur "Gérer" puis "Ajouter des rôles et fonctionnalités".
+<br>
+<br>
+<br>Passez l'étape "Avant de commencer" et poursuivez ensuite en laissant le type d'installation sur le choix "Installation basée sur un rôle ou une fonctionnalité".
+<br>
+<br>
+<br>Sélectionnez votre serveur local.
+<br>En principe, c'est le choix par défaut.
+<br>
+<br>
+<br>L'étape cruciale de l'installation du rôle est ici, puisqu'il va falloir cocher "Services AD DS" dans la liste.
+<br>Une second fenêtre va apparaître pour vous proposer d'installer les outils de gestion : validez.
+<br>Qui dit outils de gestion, dit console d'administration comme "Utilisateurs et ordinateurs Active Directory" mais aussi le module PowerShell pour Active Directory.
+<br>
+<br>
+<br>Nous n'installons pas de fonctionnalités en plus, donc poursuivez sans rien sélectionner.
+<br>
+<br>
+<br>Lisez les messages indiqués à l'étape "AD DS".
+<br>Microsoft en propose pour évoquer la synchronisation Active Directory avec Microsoft Entra ID (Azure Active Directory), son penchant dans le Cloud Microsoft.
+<br>
+<br>
+<br>Cliquez sur "Installer" pour démarrer l'installation, qui peut prendre quelques minutes.
+<br>
+<br>
+<br>Cliquez sur "Fermer" quand ce sera terminé et nous allons passer à la suite de la configuration.
+<br>
+<br>B. Créer le domaine Active Directory
+<br>
+<br>
+<br>Depuis Windows Server 2012, la fameuse commande "dcpromo" n'existe plus et laisse place à un message dans le gestionnaire de serveur qui permet de promouvoir le serveur en tant que contrôleur de domaine. Comme ceci :
+<br>
+<br>
+<br>Comme il s'agit d'un nouveau domaine dans une nouvelle forêt, choisissez "Ajouter une nouvelle forêt" et indiquez le nom de domaine. Si vous utilisez un nom de domaine tel que "it-connect.local" sachez qu'il ne sera pas routable, ce qui peut poser problèmes pour l'utilisation de certains services. En disant cela, je notamment à Azure AD Connect pour synchroniser son Active Directory local avec Microsoft 365, mais il existe des solutions (un alias sur le suffixe UPN, par exemple).
+<br>
+<br>installer-adds-windows-server-2016-10
+<br>Pour le niveau fonctionnel de la forêt et du domaine, indiquez "Windows Server 2016" mais ceci implique que vos contrôleurs de domaine devront exécuter obligatoirement Windows Server 2016 ou une version future. A ce jour, "Windows Server 2016" est la valeur la plus élevée disponible, mais ceci va évoluer avec la sortie de Windows Server 2025.
+<br>
+<br>Définissez-le aussi comme serveur DNS et Catalogue global. Enfin, indiquez un mot de passe pour les services de restauration de l'annuaire (ce mot de passe ne correspond pas au mot de passe Administrateur de votre futur domaine !).
+<br>
+<br>
+<br>Comme il s'agit d'un nouveau serveur DNS pour une nouvelle zone, ne vous inquiétez pas pour ce message, vous pouvez poursuivre.
+<br>
+<br>
+<br>Indiquez un nom NETBIOS pour le domaine, à savoir un nom court et qui ne s'appuie pas sur DNS pour être résolu.
+<br>
+<br>
+<br>
+<br>
+<br>Laissez les chemins par défaut et poursuivez.
+<br>
+<br>
+<br>Vérifiez les options et continuez.
+<br>
+<br>
+<br>Finissez en cliquant sur installer pour démarrer la création de votre domaine et la configuration du DC.
+<br>
+<br>
+<br>Patientez pendant l'installation. Quand ce sera terminé, le serveur va obligatoirement redémarrer, de façon automatique.
+<br>
+<br>
+<br>
+<br>Dès lors que l'installation est terminée et que votre serveur a redémarré, vous pouvez commencer à utiliser votre domaine Active Directory, notamment avec les consoles "Utilisateurs et ordinateurs Active Directory" et "Centre d'administration Active Directory" qui servent à gérer les objets dans l'annuaire (utilisateurs, ordinateurs, serveurs, etc.).
+<br>
+<br>installer-adds-windows-server-2016-17
+<br>III. Conclusion
+<br>Vous venez de créer un domaine Active Directory ! Il ne reste plus qu'à créer vos premiers utilisateurs, ajouter vos premiers ordinateurs, et éventuellement créer vos premières stratégies de groupe. Pour la production, veillez à utiliser au moins deux contrôleurs de domaine Active Directory.
+                 </p>
+               </div>
+              </div>
             <div class="seemore_bt"><a href="#">Remonter en haut de la page</a> </div>
               </div>
+              <div>
+
       </div>
       <!-- portfolio section end -->
       <!-- footer section start -->
